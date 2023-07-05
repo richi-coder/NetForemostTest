@@ -6,10 +6,10 @@ function useForm() {
         message: ''
       })
 
-      const updateForm = (key, value) => {
+      const updateForm = (newInfo) => {
         setForm({
           ...form,
-          [key]: value
+          ...newInfo
         })
       }
 
