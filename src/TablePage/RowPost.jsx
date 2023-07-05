@@ -11,7 +11,7 @@ function RowPost({ title, message, id }) {
     
 
   return (
-    <tr className="border" onClick={handleClick}>
+    <tr className="border cursor-pointer hover:border-purple-500" onClick={handleClick}>
       <td>{title}</td>
       <td>{message}</td>
     </tr>

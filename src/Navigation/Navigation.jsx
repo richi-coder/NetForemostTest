@@ -7,7 +7,7 @@ function Navigation() {
         <Link to={'/timer'}>Go to timer!</Link>
         <Link to={'/blog'}>Go to blog</Link>
         <Link to={'/table'}>Go to table</Link>
-        <Link to={'/post'}>Go to spec post</Link>
+        {/* <Link to={'/post'}>Go to spec post</Link> */}
     </div>
   )
 }
