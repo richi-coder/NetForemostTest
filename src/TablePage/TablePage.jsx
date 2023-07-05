@@ -18,7 +18,7 @@ function Table() {
       <p className="italic">Apartado de posts</p>
       <table className="w-full">
         <thead>
-          <tr>
+          <tr className="border-4 border-blue-500">
             <td>Title</td>
             <td>Body</td>
           </tr>
