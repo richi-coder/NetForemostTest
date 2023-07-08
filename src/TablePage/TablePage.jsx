@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchPosts } from "../Services/fetchPosts";
 import RowPost from "./RowPost";
 import { v4 as uuidv4 } from 'uuid';
 
 function Table() {
     const [postsFetched, setPostsFetched] = useState([])
+    const value = useRef('About to update!')
 
     useEffect(() => {
-        const res = fetchPosts().then(res => {
+        fetchPosts().then(res => {
             setPostsFetched(res)
+            value.current = 'Updated!'
         })
     }, [])
 
   return (
     <div>
+      <div>{value.current}</div>
       <h1 className="font-bold">Mis publicaciones</h1>
       <p className="italic">Apartado de posts</p>
       <table className="w-full">

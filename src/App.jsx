@@ -6,6 +6,8 @@ import Table from "./TablePage/TablePage";
 import PostPage from "./PostPage.jsx/PostPage";
 import Navigation from "./Navigation/Navigation";
 import LayoutEffect from "./TestingUseLayout.jsx/LayoutEffect";
+import Memo from "./TestingUseMemo.jsx/Memo";
+import SegmentTablePage from "./SegmentTablePage/SegmentTablePage";
 
 function App() {
 
@@ -17,8 +19,10 @@ function App() {
           <Route path="/timer" element={<Timer />} />
           <Route path="/blog" element={<BlogFeedPage />} />
           <Route path="/table" element={<Table />} />
+          <Route path="/segmenttable" element={<SegmentTablePage />} />
           <Route path="/post/:query" element={<PostPage />} />
           <Route path="/uselayout" element={<LayoutEffect />} />
+          <Route path="/usememo" element={<Memo />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -26,3 +30,4 @@ function App() {
 }
 
 export default App;
+
