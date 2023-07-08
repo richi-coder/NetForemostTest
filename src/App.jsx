@@ -5,8 +5,10 @@ import BlogFeedPage from "./BlogFeedPage/BlogFeedPage";
 import Table from "./TablePage/TablePage";
 import PostPage from "./PostPage.jsx/PostPage";
 import Navigation from "./Navigation/Navigation";
+import LayoutEffect from "./TestingUseLayout.jsx/LayoutEffect";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
           <Route path="/blog" element={<BlogFeedPage />} />
           <Route path="/table" element={<Table />} />
           <Route path="/post/:query" element={<PostPage />} />
+          <Route path="/uselayout" element={<LayoutEffect />} />
         </Routes>
       </BrowserRouter>
     </>
