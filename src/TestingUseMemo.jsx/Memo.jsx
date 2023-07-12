@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Memoizing from "./Memoizing";
+import NotMemoizing from "./NotMemoizing";
 
 const list = ['first response', 'better response', 'testing response', 'another response!'];
 
@@ -12,30 +14,14 @@ function delayFunction(input) {
 }
 
 function Memo() {
-    const [inputState, setInputState] = useState('');
-    const [num1] = useState(0)
-    const [num2] = useState(0)
     console.log('rendering!');
     
-    const calc = useMemo(() => delayFunction(inputState), []);
-
-    // const sum  = () => num1 + num2;
-
-    useEffect(() => {
-      console.log('effecting!');
-    }, [calc])
-
-    const handleChange = (e) => {
-        setInputState(e.target.value)
-    }
-
+    
   return (
-    <form className="border-4">
-        <div>{calc}</div>
-        <h2>Try typping with and without useMemo!</h2>
-        <input onChange={handleChange} type="text" name="" id="" value={inputState} className="pr-5 border-2" />
-        <button type="submit" className="border-2">Submit</button>
-    </form>
+    <div className="flex flex-col gap-y-5 my-10">
+      <Memoizing delayFunction={delayFunction} />
+      <NotMemoizing delayFunction={delayFunction} />
+    </div>
   )
 }
 

@@ -20,8 +20,8 @@ function LayoutEffect() {
 
   return (
     <div>
-        <div className='' ref={stateRef} >Checking!</div>
-        <div>Refresh the page!</div>
+        <div className='italic' ref={stateRef} >Check flash here!</div>
+        <div className='font-bold text-2xl'>Refresh the page!</div>
     </div>
   )
 }
