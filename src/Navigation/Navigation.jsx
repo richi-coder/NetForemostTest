@@ -9,6 +9,7 @@ function Navigation() {
         <Link to={'/table'}>Go to table</Link>
         <Link to={'/uselayout'}>Go to useLayout</Link>
         <Link to={'/usememo'}>Go to useMemo</Link>
+        <Link to={'/usetransition'}>Go to useTransition</Link>
     </div>
   )
 }

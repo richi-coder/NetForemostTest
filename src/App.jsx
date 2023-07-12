@@ -5,9 +5,10 @@ import BlogFeedPage from "./BlogFeedPage/BlogFeedPage";
 import Table from "./TablePage/TablePage";
 import PostPage from "./PostPage.jsx/PostPage";
 import Navigation from "./Navigation/Navigation";
-import LayoutEffect from "./TestingUseLayout.jsx/LayoutEffect";
-import Memo from "./TestingUseMemo.jsx/Memo";
+import LayoutEffect from "./TestingUseLayout/LayoutEffect";
+import Memo from "./TestingUseMemo/Memo";
 import SegmentTablePage from "./SegmentTablePage/SegmentTablePage";
+import Transition from "./TestingUseTransition/Transition";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/post/:query" element={<PostPage />} />
           <Route path="/uselayout" element={<LayoutEffect />} />
           <Route path="/usememo" element={<Memo />} />
+          <Route path="/usetransition" element={<Transition />} />
         </Routes>
       </BrowserRouter>
     </>
