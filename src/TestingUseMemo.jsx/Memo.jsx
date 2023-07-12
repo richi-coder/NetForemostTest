@@ -7,7 +7,7 @@ const list = ['first response', 'better response', 'testing response', 'another 
 function delayFunction(input) {
     console.log('calc function');
     const index = Math.round(Math.random() * 3);
-    for (let i = 0; i < 500; i ++) {
+    for (let i = 0; i < 1500; i ++) {
         console.log('Doing slow calculations at first render only...');
     }
     return list[index];
