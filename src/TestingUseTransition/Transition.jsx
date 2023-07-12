@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import Toggle from "./Toggle"
 import ListItems from "./ListItems"
+import FirstUpdate from "./FirstUpdate"
+import Loader from "./Loader"
 
 const initialState = new Array(5000).fill({
     content: 'heey',
@@ -18,21 +20,27 @@ const initialState = new Array(5000).fill({
 
 function Transition() {
     const [list, setList] = useState(initialState);
-    const [which, setWhich] = useState('all')
+    const [which, setWhich] = useState('all');
+    const [isPending, setTransition] = useTransition()
 
 
     const toggleImportance = (toWhich) => {
-        setWhich(prev => toWhich)
-        console.log(toWhich, 'whiich');
-        const updatedList = toWhich === 'all' ? initialState : toWhich === 'important'? initialState.filter(item => item.importance) : initialState.filter(item => !item.importance)
-        setList(updatedList)
+        setWhich(toWhich)
+        setTransition(() => {
+            const updatedList = toWhich === 'all' ? initialState : toWhich === 'important'? initialState.filter(item => item.importance) : initialState.filter(item => !item.importance)
+            setList(updatedList)
+        })
     }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 flex flex-col gap-y-3">
         <Toggle toggleImportance={toggleImportance} />
-        <div className="italic">Showing which? : <strong>{which}</strong></div>
-        <ListItems list={list} />
+        <FirstUpdate which={which} />
+        {
+            isPending ?
+            <Loader /> :
+            <ListItems list={list} />
+        }
     </div>
   )
 }
