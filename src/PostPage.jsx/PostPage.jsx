@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 import { useEffect, useState } from "react";
-import { fetchPosts } from "../Services/fetchPosts";
+import { fetchPosts } from "../services/fetchPosts";
 
 function PostPage() {
     const params = useParams();

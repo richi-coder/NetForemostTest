@@ -1,4 +1,4 @@
-import { fetchUsers } from "../Services/fetchUsers"
+import { fetchUsers } from "../../services/fetchUsers"
 
 function BringUsersButton({ currentIndex, buttonDisabled, printMoreUsers }) {
 

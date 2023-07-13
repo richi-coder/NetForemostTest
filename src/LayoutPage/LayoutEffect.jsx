@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { fetchPosts } from '../Services/fetchPosts';
+import { fetchPosts } from '../services/fetchPosts';
 
 function LayoutEffect() {
     const stateRef = useRef();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { fetchUsers } from "../Services/fetchUsers";
-import Users from "./Users";
-import BringUsers from "./BringUsersButton";
+import { fetchUsers } from "../services/fetchUsers";
+import Users from "./components/Users";
+import BringUsers from "./components/BringUsersButton";
 
 function SegmentTablePage() {
     const [indexPage, setIndexPage] = useState(1);

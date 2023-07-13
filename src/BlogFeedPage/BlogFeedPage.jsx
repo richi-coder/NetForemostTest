@@ -1,7 +1,7 @@
 import Form from "./Form";
 import Posts from "./Posts";
-import useForm from "../Hooks/useForm";
-import usePosts from "../Hooks/usePosts";
+import useForm from "../hooks/useForm";
+import usePosts from "../hooks/usePosts";
 
 function BlogFeedPage() {
   const [form, updateForm] = useForm();

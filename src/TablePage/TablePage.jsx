@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { fetchPosts } from "../Services/fetchPosts";
+import { fetchPosts } from "../services/fetchPosts";
 import RowPost from "./RowPost";
 import { v4 as uuidv4 } from 'uuid';
 
