@@ -1,5 +1,3 @@
-import { useParams } from "react-router"
-import { useEffect, useState } from "react";
 import { fetchOnePost, fetchPosts } from "../services/fetchPosts";
 
 
@@ -19,7 +17,7 @@ const fetchProcess = (postID = 1) => {
                         })
 
     return {
-            read()  {
+            read() {
                     if (status == 'pending') {
                         throw fetching
                     } else if (status === 'error') {
