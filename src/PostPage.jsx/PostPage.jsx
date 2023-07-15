@@ -1,34 +1,40 @@
 import { useParams } from "react-router"
 import { useEffect, useState } from "react";
-import { fetchPosts } from "../services/fetchPosts";
+import { fetchOnePost, fetchPosts } from "../services/fetchPosts";
 
-function PostPage() {
-    const params = useParams();
-    const postID = params.query;
-    const [postToShow, setPostToShow] = useState({
-        title: '',
-        body: ''
-    })
 
-    useEffect(() => {
-        fetchPosts().then(res => setPostToShow(res[postID - 1]))
-    }, [])
-    
+const fetchProcess = (postID = 1) => {
+    let status = 'pending';
+    let result;
+    let fetching = fetchPosts()
+                        .then(
+                            res => {
+                            status = 'success'
+                            result = res[postID - 1];
+                            console.log(res);
+                            },
+                            err => {
+                            status = 'error'
+                            result = err
+                        })
 
-  return (
-    <div>
-        {
-            postToShow.length != '' ?
-            <>
-                <h1>{postToShow.title}</h1>
-                <div>{postToShow.body}</div>
-            </>
-             :
-            null
-        }
-        
-    </div>
-  )
+    return {
+            read()  {
+                    if (status == 'pending') {
+                        throw fetching
+                    } else if (status === 'error') {
+                        throw result
+                    } else if (status === 'success') {
+                        return result
+                    }
+                }
+            }   
 }
 
-export default PostPage
+const resource = fetchProcess();
+
+export default function PostPage() {
+    let postToShow = resource.read()
+    
+    return <div>{JSON.stringify(postToShow)}READY</div>
+}

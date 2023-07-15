@@ -14,6 +14,7 @@ function Table() {
         })
     }, [])
 
+    
   return (
     <div>
       <div>{value.current}</div>
